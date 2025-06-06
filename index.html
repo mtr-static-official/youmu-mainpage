@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youmu的个人主页</title>
+    <style>
+        :root {
+            --primary-color: #1a3e34;
+            --secondary-color: #2d5e4a;
+            --accent-color: #4a8c6d;
+            --text-color: #e8f4ea;
+            --light-text: #f5f9f6;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        header {
+            background-color: var(--secondary-color);
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            width: 100%;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--light-text);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        main {
+            flex: 1;
+            padding: 3rem 0;
+        }
+        
+        .links-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .link-card {
+            background-color: var(--secondary-color);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: var(--shadow);
+        }
+        
+        .link-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            background-color: var(--accent-color);
+        }
+        
+        .link-card i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--light-text);
+        }
+        
+        .link-card h2 {
+            margin-bottom: 1rem;
+            color: var(--light-text);
+        }
+        
+        .link-card p {
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: #0f2a21;
+        }
+        
+        footer {
+            background-color: var(--secondary-color);
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: auto;
+            box-shadow: var(--shadow);
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .links-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script async src="//finicounter.eu.org/finicounter.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>MTR连接中心</h1>
+            <p class="subtitle">MTR Connect</p>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <div class="links-container">
+                <div class="link-card">
+                    <i class="fas fa-blog"></i>
+                    <h2>博客</h2>
+                    <p>分享我的思考、经验和学习笔记</p>
+                    <a href="https://blog.youmu.ltd" class="btn" target="_blank">访问博客</a>
+                </div>
+                
+                <div class="link-card">
+                    <i class="fas fa-cloud"></i>
+                    <h2>网盘</h2>
+                    <p>存储和分享我的文件资源</p>
+                    <a href="https://pan.youmu.ltd" class="btn" target="_blank">访问网盘</a>
+                </div>
+                
+                <div class="link-card">
+                    <i class="fas fa-images"></i>
+                    <h2>图床</h2>
+                    <p>托管我的图片资源</p>
+                    <a href="https://img.youmu.ltd" class="btn" target="_blank">访问图床</a>
+                </div>
+                
+                <div class="link-card">
+                    <i class="fas fa-envelope"></i>
+                    <h2>联系我</h2>
+                    <p>通过邮件与我取得联系</p>
+                    <a href="mailto:mtr@mtr.pub" class="btn">发送邮件</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Youmu. 保留所有权利。</p>
+            <p>Since <b>2025.6.6</b></p>
+            <p>Page View:<b><span id="finicount_views"></span></b></p>
+        </div>
+    </footer>
+</body>
+</html>
